@@ -35,7 +35,7 @@ const App=() => {
 		/>
 		{/* <News pageSize={pageSize} country={country} category="science" /> */}
 		<Routes>
-			<Route path="/NewsApi">
+			<Route exact path="/NewsApi">
 				<Route exact path="/" element={<News mode={mode} setProgress={setProgress} apiKey={apiKey} key="general" pageSize={pageSize} country={country} openedPath="/" />}/>
 				<Route exact path="/business" element={<News mode={mode} setProgress={setProgress} apiKey={apiKey} key="business" pageSize={pageSize} country={country} category="business" openedPath="/business" />}/>
 				<Route exact path="/entertainment" element={<News mode={mode} setProgress={setProgress} apiKey={apiKey} key="entertainment" pageSize={pageSize} country={country} category="entertainment" openedPath="/entertainment" />}/>
