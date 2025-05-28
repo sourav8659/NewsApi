@@ -27,14 +27,15 @@ const App=() => {
 	
 	return (
 	<div><BrowserRouter>
-		<NavBar mode={mode} toggleMode={toggleMode}/>
-		<LoadingBar
-			color='#088cff'
-			progress={progress}
-			height={3}
-		/>
-		{/* <News pageSize={pageSize} country={country} category="science" /> */}
 		<Routes>
+			<Route exact path='/newsapp'>
+				<NavBar mode={mode} toggleMode={toggleMode}/>
+				<LoadingBar
+					color='#088cff'
+					progress={progress}
+					height={3}
+				/>
+				{/* <News pageSize={pageSize} country={country} category="science" /> */}
 				<Route exact path="/" element={<News mode={mode} setProgress={setProgress} apiKey={apiKey} key="general" pageSize={pageSize} country={country} openedPath="/" />}/>
 				<Route exact path="/business" element={<News mode={mode} setProgress={setProgress} apiKey={apiKey} key="business" pageSize={pageSize} country={country} category="business" openedPath="/business" />}/>
 				<Route exact path="/entertainment" element={<News mode={mode} setProgress={setProgress} apiKey={apiKey} key="entertainment" pageSize={pageSize} country={country} category="entertainment" openedPath="/entertainment" />}/>
@@ -43,6 +44,7 @@ const App=() => {
 				<Route exact path="/science" element={<News mode={mode} setProgress={setProgress} apiKey={apiKey} key="science" pageSize={pageSize} country={country} category="science" openedPath="/science" />}/>
 				<Route exact path="/sports" element={<News mode={mode} setProgress={setProgress} apiKey={apiKey} key="sports" pageSize={pageSize} country={country} category="sports" openedPath="/sports" />}/>
 				<Route exact path="/technology" element={<News mode={mode} setProgress={setProgress} apiKey={apiKey} key="technology" pageSize={pageSize} country={country} category="technology" openedPath="/technology" />}/>
+			</Route>
 		</Routes>
 	</BrowserRouter></div>
 	)
